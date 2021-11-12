@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>4chan Leak RSS</h1>
+<p>
+	Go to
+	<a {{ {"href": url_for("views.feed")} | xmlattr }}>the feed</a>
+	.
+</p>
+{% endblock %}
