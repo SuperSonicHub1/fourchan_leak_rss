@@ -8,15 +8,20 @@ from json import loads
 session = Session()
 
 URL = "https://cse.google.com/cse/element/v1"
-QUERY = {
-	"num": 20,
-	"cx": "007638134514443209427:kjalhbutdxc",
-	"q": None,
-	"safe": "off",
-	"cse_tok": "AJvRUv3U3y44RFcweP48CvpDkB5P:1633792129891",
-	"sort": "date",
-	"callback": "google.search.cse.api18483"
-}
+QUERY = dict((
+    ('rsz', '20'),
+    ('num', '20'),
+    ('hl', 'en'),
+    ('gss', '.com'),
+    ('cselibv', 'ff97a008b4153450'),
+    ('cx', '007638134514443209427:kjalhbutdxc'),
+    # ('q', ' jenny death'),
+    ('safe', 'off'),
+    ('cse_tok', 'AJvRUv1ITowfXDNcfJ0Fcp8uAL8i:1641086440725'),
+    ('sort', 'date'),
+    ('exp', 'csqr,cc'),
+    ('callback', 'google.search.cse.api6959'),
+))
 
 IMG_TEMPLATE = "<img src='{}'>"
 
@@ -53,6 +58,8 @@ def create_feed():
 	icon = WebfeedsIcon("https://s.4cdn.org/image/apple-touch-icon-ipad-retina.png")
 
 	DESCRIPTION = "Too much cool stuff leaks on that godawful website, so let's visit it as little as possible."
+
+	print(body)
 
 	info = {
 		"title": "4chan Leaks",
